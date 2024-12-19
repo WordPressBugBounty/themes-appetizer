@@ -2,10 +2,10 @@
 
 Contributors: burgersoftware
 Requires at least: 4.4
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.1.10
-Version: 1.1.10
+Stable tag: 1.1.11
+Version: 1.1.11
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, grid-layout, portfolio, photography
@@ -21,7 +21,7 @@ Appetizer is distributed under the terms of the GNU GPL
 Appetizer is a Creative, Modern, and Professional Restaurant WordPress Theme. The theme is perfect for Restaurants, Fast Food, Seafood restaurants, Recipes, bakeries, burgers, Coffee Shops, Pizza Shops Websites, who need an easy, attractive and effective way to promote your food related services. Checkout Pro Version https://burgerthemes.com/demo/pro/appetizer/
 
 == Installation ==
-	
+
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
@@ -99,6 +99,10 @@ License: Creative Commons Zero
 Clip Art & All other Images have been used in images folder, Created by Burger Software. Also they are GPL Licensed and free to use and free to redistribute further.
 
 == Changelog ==
+
+@version 1.1.11
+* WP 6.7 Tested 
+* Translate String Issue Fixed 
 
 @version 1.1.10
 * WP 6.6 Tested 

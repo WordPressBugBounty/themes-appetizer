@@ -21,20 +21,22 @@ if ( post_password_required() ) {
 ?>
 <div class="col-md-12 mt-5 wow fadeInUp">
 	<div id="comments" class="comments-area">
-				<?php
+		<?php
 				// You can start editing here -- including this comment!
-				if ( have_comments() ) : ?>
-				<div class="single-comments-title">
-					<h2>
-						<?php
-							printf( // WPCS: XSS OK.
-								esc_html('One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'appetizer'),
-								number_format_i18n( get_comments_number() ),
-								'<span>' . esc_html(get_the_title()) . '</span>'
-							);
-						?>
-					</h2>
-				</div>
+		if ( have_comments() ) : ?>
+			<div class="single-comments-title">
+				<h2>
+					<?php
+					printf(
+						esc_html__(
+							_n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'appetizer' )
+						),
+						number_format_i18n( get_comments_number() ),
+						'<span>' . esc_html( get_the_title() ) . '</span>'
+					);
+					?>
+				</h2>
+			</div>
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
@@ -46,26 +48,26 @@ if ( post_password_required() ) {
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-above -->
-			<?php endif; // Check for comment navigation. ?>
+		<?php endif; // Check for comment navigation. ?>
 
-			<ol class="comment-list">
-				<?php
-					wp_list_comments( array(
-						'style'      => 'ol',
-						'short_ping' => true,
-					) );
-				?>
-			</ol><!-- .comment-list -->
-
-			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-				<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-					<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'appetizer' ); ?></h2>
-					<div class="nav-links">
-						<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'appetizer' ) ); ?></div>
-						<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'appetizer' ) ); ?></div>
-					</div><!-- .nav-links -->
-				</nav><!-- #comment-nav-below -->
+		<ol class="comment-list">
 			<?php
+			wp_list_comments( array(
+				'style'      => 'ol',
+				'short_ping' => true,
+			) );
+			?>
+		</ol><!-- .comment-list -->
+
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'appetizer' ); ?></h2>
+			<div class="nav-links">
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'appetizer' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'appetizer' ) ); ?></div>
+			</div><!-- .nav-links -->
+		</nav><!-- #comment-nav-below -->
+		<?php
 			endif; // Check for comment navigation.
 
 		endif; // Check for have_comments().
@@ -76,9 +78,9 @@ if ( post_password_required() ) {
 
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'appetizer' ); ?></p>
 		<?php
-		endif;
+	endif;
 
-		comment_form();
-		?>
-	</div>
+	comment_form();
+	?>
+</div>
 </div>	
